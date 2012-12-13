@@ -40,12 +40,12 @@ let mapleader=';'
 
 noremap <leader>j ddp
 noremap <leader>k ddkP
-noremap <leader>m :set mouse=a
-noremap <leader>M :set mouse=
-noremap <leader>n :set number!
+noremap <leader>m :set mouse=a<enter>
+noremap <leader>M :set mouse=<enter>
+noremap <leader>n :set number!<enter>
 noremap <leader>b }v{
 noremap <leader>B {v}
-noremap <leader>t :tabnew
-noremap <leader>[ :tabprevious
-noremap <leader>] :tabnext
-noremap <leader># :s/^/#/
+noremap <leader>t :tabnew<enter>
+noremap <leader>[ :tabprevious<enter>
+noremap <leader>] :tabnext<enter>
+noremap <leader># :s/^/#/<enter>
