@@ -1,5 +1,17 @@
-" Lets infect first
-call pathogen#infect()
+runtime autoload/pathogen.vim
+if exists("g:loaded_pathogen")
+	" Lets infect first
+	call pathogen#infect()
+	if has("terminfo") && ! ( &term == 'xterm-256color' )
+		" your term is inadequate - this theme is your punishment
+		set t_Co=16
+		colorscheme default
+	else
+		" you have chosen wisely
+		set t_Co=256
+		colorscheme distinguished
+	endif
+endif
 
 " Strongly recommended defaults
 if has("autocmd")
@@ -9,15 +21,6 @@ if has("autocmd")
     au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 endif
 
-if has("terminfo") && ! ( &term == 'xterm-256color' )
-    " your term is inadequate - this theme is your punishment
-    set t_Co=16
-    colorscheme default
-else
-    " you have chosen wisely
-    set t_Co=256
-    colorscheme distinguished
-endif
 
 if has("gui_running") 
 	set guifont=consolas:h10
