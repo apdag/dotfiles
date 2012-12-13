@@ -1,0 +1,48 @@
+" Lets infect first
+call pathogen#infect()
+
+" Strongly recommended defaults
+if has("autocmd")
+    filetype on
+    filetype indent on
+    filetype plugin on
+    au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+endif
+
+if has("terminfo") && ! ( &term == 'xterm-256color' )
+    " your term is inadequate - this theme is your punishment
+    set t_Co=16
+    colorscheme default
+else
+    " you have chosen wisely
+    set t_Co=256
+    colorscheme distinguished
+endif
+
+if has("gui_running") 
+	set guifont=consolas:h10
+endif
+
+set novisualbell
+syntax on
+set nocp
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set number
+set backspace=indent,eol,start
+
+let mapleader=';'
+
+noremap <leader>j ddp
+noremap <leader>k ddkP
+noremap <leader>m :set mouse=a
+noremap <leader>M :set mouse=
+noremap <leader>n :set number!
+noremap <leader>b }v{
+noremap <leader>B {v}
+noremap <leader>t :tabnew
+noremap <leader>[ :tabprevious
+noremap <leader>] :tabnext
+noremap <leader># :s/^/#/
