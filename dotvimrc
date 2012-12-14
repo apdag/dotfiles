@@ -2,7 +2,7 @@ runtime autoload/pathogen.vim
 if exists("g:loaded_pathogen")
 	" Lets infect first
 	call pathogen#infect()
-	if has("terminfo") && ! ( &term == 'xterm-256color' )
+	if has("terminfo") && ! ((&term == 'screen-256color') || ( &term == 'xterm-256color' ))
 		" your term is inadequate - this theme is your punishment
 		set t_Co=16
 		colorscheme default
