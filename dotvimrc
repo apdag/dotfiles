@@ -36,9 +36,12 @@ set shiftwidth=4
 set autoindent
 set number
 set backspace=indent,eol,start
+set encoding=utf-8
+set laststatus=2
 
 let mapleader=';'
 
+noremap <leader>p :CtrlPBuffer
 noremap <leader>j ddp
 noremap <leader>k ddkP
 noremap <leader>m :set mouse=a<enter>

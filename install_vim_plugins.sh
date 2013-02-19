@@ -10,7 +10,10 @@ AUTOLOAD_DIR="${DOTVIM_DIR}/autoload"
 plugins=( \
 	'https://github.com/scrooloose/syntastic.git' \
 	'https://github.com/Lokaltog/vim-distinguished.git' \
-	'https://github.com/tpope/vim-fugitive.git'
+	'https://github.com/tpope/vim-fugitive.git' \
+	'https://github.com/Lokaltog/vim-powerline.git' \
+	'https://github.com/kien/ctrlp.vim.git' \
+	'https://github.com/scrooloose/nerdtree.git'
 	)
 
 
