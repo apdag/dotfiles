@@ -54,6 +54,8 @@ noremap <leader>[ :tabprevious<enter>
 noremap <leader>] :tabnext<enter>
 noremap <leader># :s/^/#/<enter>
 
+noremap <leader>l :NERDTreeToggle
+
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gs :Gstatus<CR>
 noremap <leader>gd :Gdiff<CR>
