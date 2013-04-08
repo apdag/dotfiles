@@ -12,7 +12,7 @@ if exists("g:loaded_pathogen")
 		colorscheme distinguished
 	endif
 	if has("gui_running") 
-		set guifont=consolas:h10
+		" set guifont=consolas:h10
 		colorscheme distinguished
 	endif
 endif
@@ -27,6 +27,7 @@ endif
 
 
 
+set hidden
 set novisualbell
 syntax on
 set nocp

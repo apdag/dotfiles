@@ -1,2 +1,3 @@
 [[ -n $TMUX ]] && export TERM='screen-256color'
 export PATH=$PATH:~/bin
+[[ -f /usr/local/bin/brew ]] && export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
