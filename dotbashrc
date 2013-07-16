@@ -1,3 +1,8 @@
+export GOPATH="$HOME/Source/Golang"
 [[ -n $TMUX ]] && export TERM='screen-256color'
-export PATH=$PATH:~/bin
+export PATH=/usr/local/bin:$PATH:$GOPATH/bin:~/bin
 [[ -f /usr/local/bin/brew ]] && export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
