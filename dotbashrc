@@ -7,6 +7,7 @@ then
 	    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 		export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+		alias ls='ls --color'
 fi
 
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && \
