@@ -1,10 +1,21 @@
 export GOPATH="$HOME/Source/Golang"
 [[ -n $TMUX ]] && export TERM='screen-256color'
 export PATH=/usr/local/bin:$PATH:$GOPATH/bin:~/bin
-[[ -f /usr/local/bin/brew ]] && export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# Homebrew on OS X 
+if [ -f /usr/local/bin/brew ] 
+then 
+	    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+	    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+		export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+fi
+
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && \
+
 	. /usr/local/bin/virtualenvwrapper.sh
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+if [ -s "$HOME/.rvm/scripts/rvm" ]
+then
+	. "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+	export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
