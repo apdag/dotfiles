@@ -8,6 +8,7 @@ BUNDLE_DIR=${DOTVIM_DIR}/bundle
 AUTOLOAD_DIR="${DOTVIM_DIR}/autoload"
 
 plugins=( \
+	'git://github.com/altercation/vim-colors-solarized.git' \
 	'https://github.com/scrooloose/syntastic.git' \
 	'https://github.com/Lokaltog/vim-distinguished.git' \
 	'https://github.com/tpope/vim-fugitive.git' \

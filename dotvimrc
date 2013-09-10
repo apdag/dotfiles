@@ -13,7 +13,8 @@ if exists("g:loaded_pathogen")
 	endif
 	if has("gui_running") 
 		" set guifont=consolas:h10
-		colorscheme distinguished
+		colorscheme solarized
+		set background=light
 	endif
 endif
 
@@ -42,6 +43,8 @@ set laststatus=2
 
 let mapleader=';'
 
+" close current buffer - fails with changed
+noremap <leader>c :bd<CR>
 noremap <leader>p :CtrlPBuffer
 noremap <leader>j ddp
 noremap <leader>k ddkP
@@ -55,7 +58,7 @@ noremap <leader>[ :tabprevious<enter>
 noremap <leader>] :tabnext<enter>
 noremap <leader># :s/^/#/<enter>
 
-noremap <leader>l :NERDTreeToggle
+noremap <leader>l :NERDTreeToggle<CR>
 
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gs :Gstatus<CR>
