@@ -18,12 +18,22 @@ if exists("g:loaded_pathogen")
 	endif
 endif
 
+function PluginConfig()
+	if exists("g:loaded_syntastic_plugin")
+		let g:syntastic_check_on_open = 1
+		let g:syntastic_enable_balloons = 1
+		let g:syntastic_auto_loc_list = 1	
+	endif 
+endfunction
+
+
 " Strongly recommended defaults
 if has("autocmd")
     filetype on
     filetype indent on
     filetype plugin on
     au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+	au VimEnter * call PluginConfig()
 endif
 
 
