@@ -5,7 +5,7 @@ if exists("g:loaded_pathogen")
 	if has("terminfo") && ! ((&term == 'screen-256color') || ( &term == 'xterm-256color' ))
 		" your term is inadequate - this theme is your punishment
 		set t_Co=16
-		colorscheme default
+		colorscheme delek
 	else
 		" you have chosen wisely
 		set t_Co=256
@@ -20,12 +20,25 @@ endif
 
 function PluginConfig()
 	if exists("g:loaded_syntastic_plugin")
+		" syntastic settings
 		let g:syntastic_check_on_open = 1
 		let g:syntastic_enable_balloons = 1
 		let g:syntastic_auto_loc_list = 1	
 	endif 
+	if exists("g:loaded_nerd_tree")
+		" nerd tree settings
+		noremap <leader>l :NERDTreeToggle<CR>
+	endif 
+	if exists("g:loaded_fugitive")
+		" fugitive settings 
+		noremap <leader>gb :Gblame<CR>
+		noremap <leader>gs :Gstatus<CR>
+		noremap <leader>gd :Gdiff<CR>
+		noremap <leader>gl :Glog<CR>
+		noremap <leader>gc :Gcommit<CR>
+		noremap <leader>gp :Git push<CR>
+	endif
 endfunction
-
 
 " Strongly recommended defaults
 if has("autocmd")
@@ -35,7 +48,6 @@ if has("autocmd")
     au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 	au VimEnter * call PluginConfig()
 endif
-
 
 
 set hidden
@@ -68,11 +80,4 @@ noremap <leader>[ :tabprevious<enter>
 noremap <leader>] :tabnext<enter>
 noremap <leader># :s/^/#/<enter>
 
-noremap <leader>l :NERDTreeToggle<CR>
 
-noremap <leader>gb :Gblame<CR>
-noremap <leader>gs :Gstatus<CR>
-noremap <leader>gd :Gdiff<CR>
-noremap <leader>gl :Glog<CR>
-noremap <leader>gc :Gcommit<CR>
-noremap <leader>gp :Git push<CR>

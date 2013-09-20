@@ -10,7 +10,8 @@ then
 		alias ls='ls --color'
 fi
 
-[[ -f /usr/local/bin/virtualenvwrapper.sh ]] && \
+[[ -x $(which mvim) ]] && export EDITOR='mvim -f' 
+[[ -x /usr/local/bin/virtualenvwrapper.sh ]] && \
 
 	. /usr/local/bin/virtualenvwrapper.sh
 
