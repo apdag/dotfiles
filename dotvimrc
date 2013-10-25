@@ -24,6 +24,7 @@ function PluginConfig()
 		let g:syntastic_check_on_open = 1
 		let g:syntastic_enable_balloons = 1
 		let g:syntastic_auto_loc_list = 1	
+		noremap <leader>sm :SyntasticToggleMode<CR>
 	endif 
 	if exists("g:loaded_nerd_tree")
 		" nerd tree settings
@@ -37,6 +38,9 @@ function PluginConfig()
 		noremap <leader>gl :Glog<CR>
 		noremap <leader>gc :Gcommit<CR>
 		noremap <leader>gp :Git push<CR>
+	endif
+	if exists("g:loaded_ctrlp")
+		noremap <leader>p :CtrlPBuffer<CR>
 	endif
 endfunction
 
@@ -67,9 +71,8 @@ let mapleader=';'
 
 " close current buffer - fails with changed
 noremap <leader>c :bd<CR>
-noremap <leader>p :CtrlPBuffer
 noremap <leader>j ddp
-noremap <leader>k ddkP
+noremap <leader>k kddpk
 noremap <leader>m :set mouse=a<enter>
 noremap <leader>M :set mouse=<enter>
 noremap <leader>n :set number!<enter>
