@@ -7,8 +7,11 @@ else
 	schar="\e[1;32m+\e[0m"
 	fchar="\e[1;31mx\e[0m"
 fi
+
 export PS1='[\h:\u] \e[1m\w\e[0m \n[`if [[ \$? -eq 0 ]]; then echo $schar; else echo $fchar ; fi`]\$ '
+
 [[ -n $TMUX ]] && export TERM='screen-256color'
+
 # Homebrew on OS X 
 if [ -f /usr/local/bin/brew ] 
 then 
@@ -17,12 +20,15 @@ then
 		#export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 		alias ls='ls --color'
 fi
+
+# Or perhaps MacPorts
 if [ -f /opt/local/bin/port ]
 then
 	export PATH="/opt/local/bin:/opt/local/libexec/gnubin:$PATH"
 	export MANPATH="/opt/local/share/man:$MANPATH"
 	alias ls='ls --color'
 fi
+
 export PATH=/usr/local/bin:$PATH:~/bin
 
 [[ -x $(which mvim) ]] && export EDITOR='/usr/local/bin/mvim -f' 
@@ -30,17 +36,18 @@ export PATH=/usr/local/bin:$PATH:~/bin
 
 	. /usr/local/bin/virtualenvwrapper.sh
 
-if [ -s "$HOME/.rvm/scripts/rvm" ]
-then
-	. "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-	export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
+#if [ -s "$HOME/.rvm/scripts/rvm" ]
+#then
+#	. "$HOME/.rvm/scripts/rvm" # Load RVM function
+#
+#	export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#fi
 
 
 #[[ -f ~/perl5/perlbrew/etc/bashrc ]] && source ~/perl5/perlbrew/etc/bashrc
 
 
+# Todo.txt support
 function init_todo {
 	alias t="/usr/local/bin/todo" 
 	alias tlw="t ls @work"
