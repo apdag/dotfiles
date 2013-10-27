@@ -8,7 +8,7 @@ else
 	fchar="\e[1;31mx\e[0m"
 fi
 
-export PS1='[\h:\u] \e[1m\w\e[0m \n[`if [[ \$? -eq 0 ]]; then echo $schar; else echo $fchar ; fi`]\$ '
+export PS1='[`if [[ \$? -eq 0 ]]; then echo $schar; else echo $fchar ; fi`][\h:\u] \e[1m\w\e[0m \n\$ '
 
 [[ -n $TMUX ]] && export TERM='screen-256color'
 
