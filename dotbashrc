@@ -27,6 +27,9 @@ then
 	export PATH="/opt/local/bin:/opt/local/libexec/gnubin:$PATH"
 	export MANPATH="/opt/local/share/man:$MANPATH"
 	alias ls='ls --color'
+elif [ -d /opt/local/bin ]
+then
+	export PATH="/opt/local/bin:$PATH"
 fi
 
 export PATH=/usr/local/bin:$PATH:~/bin
