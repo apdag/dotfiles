@@ -47,3 +47,7 @@ echo -n "Linking RC files: "
 ln -s "${PWD}/rc.vim" "${VIM_RC}"
 ln -s "${PWD}/bundle.vim" "${VUNDLE_RC}"
 echo "DONE" 
+
+echo -n "Installing Plugins: "
+vim +PluginInstall +qall
+echo "DONE" 

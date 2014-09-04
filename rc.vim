@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-source .bundle.vim
+source ~/.bundle.vim
 
 
 if has("terminfo") && ! ((&term == 'screen-256color') || ( &term == 'xterm-256color' ))
