@@ -1,21 +1,25 @@
-runtime autoload/pathogen.vim
-if exists("g:loaded_pathogen")
-	" Lets infect first
-	call pathogen#infect()
-	if has("terminfo") && ! ((&term == 'screen-256color') || ( &term == 'xterm-256color' ))
-		" your term is inadequate - this theme is your punishment
-		set t_Co=16
-		colorscheme delek
-	else
-		" you have chosen wisely
-		set t_Co=256
-		colorscheme distinguished
-	endif
-	if has("gui_running") 
-		" set guifont=consolas:h10
+set nocompatible              " be iMproved, required
+source .bundle.vim
+
+
+if has("terminfo") && ! ((&term == 'screen-256color') || ( &term == 'xterm-256color' ))
+	" your term is inadequate - this theme is your punishment
+	set t_Co=16
+	colorscheme delek
+else
+	" you have chosen wisely
+	set t_Co=256
+	colorscheme distinguished
+endif
+if has("gui_running") 
+	" set guifont=consolas:h10
+	set guifont=Menlo:h14
+	try
 		colorscheme solarized
 		set background=light
-	endif
+	catch /^Vim\%((\a\+)\)\=:E185/
+		colorscheme desert
+	endtry
 endif
 
 function PluginConfig()
@@ -28,7 +32,7 @@ function PluginConfig()
 	endif 
 	if exists("g:loaded_nerd_tree")
 		" nerd tree settings
-		noremap <leader>l :NERDTreeToggle<CR>
+		noremap <leader>t :NERDTreeToggle<CR>
 	endif 
 	if exists("g:loaded_fugitive")
 		" fugitive settings 
@@ -46,11 +50,9 @@ endfunction
 
 " Strongly recommended defaults
 if has("autocmd")
-    filetype on
-    filetype indent on
-    filetype plugin on
-    au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+    au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 	au VimEnter * call PluginConfig()
+	au BufRead,BufNewFile *.jinja set syntax=jinja
 endif
 
 
@@ -71,6 +73,8 @@ let mapleader=';'
 
 " close current buffer - fails with changed
 noremap <leader>c :bd<CR>
+noremap <leader>l :bn<CR>
+noremap <leader>h :bp<CR>
 noremap <leader>j ddp
 noremap <leader>k kddpk
 noremap <leader>m :set mouse=a<enter>
@@ -78,9 +82,9 @@ noremap <leader>M :set mouse=<enter>
 noremap <leader>n :set number!<enter>
 noremap <leader>b }v{
 noremap <leader>B {v}
-noremap <leader>t :tabnew<enter>
 noremap <leader>[ :tabprevious<enter>
 noremap <leader>] :tabnext<enter>
 noremap <leader># :s/^/#/<enter>
+noremap <leader>v :vs 
 
 
