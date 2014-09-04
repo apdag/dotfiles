@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 source ~/.bundle.vim
 
 

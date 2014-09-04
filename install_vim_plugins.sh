@@ -49,5 +49,5 @@ ln -s "${PWD}/bundle.vim" "${VUNDLE_RC}"
 echo "DONE" 
 
 echo -n "Installing Plugins: "
-vim +PluginInstall +qall
+vim -u "${PWD}/bundle.vim" +PluginInstall +qall
 echo "DONE" 
