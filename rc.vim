@@ -85,5 +85,7 @@ noremap <leader>[ :tabprevious<enter>
 noremap <leader>] :tabnext<enter>
 noremap <leader># :s/^/#/<enter>
 noremap <leader>v :vs 
-
+noremap <leader> :1<CR>!!which bash<CR>0i#!<esc>o<CR>
+noremap <leader> :1<CR>O#!/usr/bin/env python<CR><CR>
+noremap <leader> :1<CR>O#!/usr/bin/env ruby<CR><CR>
 

@@ -19,11 +19,12 @@ Plugin 'Lokaltog/vim-distinguished'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'glench/Vim-Jinja2-Syntax'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'chrisbra/csv.vim'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
