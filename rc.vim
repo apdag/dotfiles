@@ -42,8 +42,8 @@ function PluginConfig()
 		noremap <leader>gc :Gcommit<CR>
 		noremap <leader>gp :Git push<CR>
 	endif
-	if exists("g:loaded_notes")
-		let g:notes_directories = ['~/Dropbox (Personal)/Notes']
+	if exists("g:loaded_vimwiki")
+		let g:vimwiki_list = [{'path': '~/VimWiki', 'path_html': '~/VimWikiHtml'}]
 	endif
 	if exists("g:loaded_ctrlp")
 		noremap <leader>p :CtrlPBuffer<CR>
