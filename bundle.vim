@@ -21,6 +21,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'glench/Vim-Jinja2-Syntax'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'chrisbra/csv.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.

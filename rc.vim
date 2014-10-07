@@ -42,6 +42,9 @@ function PluginConfig()
 		noremap <leader>gc :Gcommit<CR>
 		noremap <leader>gp :Git push<CR>
 	endif
+	if exists("g:loaded_notes")
+		let g:notes_directories = ['~/Dropbox (Personal)/Notes']
+	endif
 	if exists("g:loaded_ctrlp")
 		noremap <leader>p :CtrlPBuffer<CR>
 	endif
