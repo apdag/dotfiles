@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'file:///Users/dmcnish/downloads/syntastic'
+" Plugin 'file:///Users/dmcnish/downloads/syntastic'
 Plugin 'vim-scripts/L9'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'altercation/vim-colors-solarized'
@@ -22,6 +22,7 @@ Plugin 'glench/Vim-Jinja2-Syntax'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'chrisbra/csv.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'tpope/vim-sensible'
 " Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-notes'
 " git repos on your local machine (i.e. when working on your own plugin)

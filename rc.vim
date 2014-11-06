@@ -1,3 +1,4 @@
+set shell=/bin/bash
 source ~/.bundle.vim
 
 
@@ -71,8 +72,8 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set laststatus=2
 
-let mapleader=';'
-
+let mapleader=','
+noremap \ ,
 " close current buffer - fails with changed
 noremap <leader>c :bd<CR>
 noremap <leader>l :bn<CR>
