@@ -12,15 +12,22 @@ else
 	colorscheme distinguished
 endif
 if has("gui_running") 
-	" set guifont=consolas:h10
-	set guifont=Menlo:h14
 	try
-		colorscheme solarized
-		set background=light
-	catch /^Vim\%((\a\+)\)\=:E185/
-		colorscheme desert
+		set guifont=Menlo:h14
+		colorscheme distinguished
+	catch /^Vim\%((\a\+)\)\=:E596/
+		" nothing to see here
 	endtry
 endif
+
+function! s:DiffWithSaved()
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 function PluginConfig()
 	if exists("g:loaded_syntastic_plugin")
@@ -48,6 +55,9 @@ function PluginConfig()
 	endif
 	if exists("g:loaded_ctrlp")
 		noremap <leader>p :CtrlPBuffer<CR>
+		let g:ctrlp_map = '<c-p>'
+		let g:ctrlp_cmd = 'CtrlPLastMode'
+		let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 	endif
 endfunction
 
@@ -72,8 +82,6 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set laststatus=2
 
-let mapleader=','
-noremap \ ,
 " close current buffer - fails with changed
 noremap <leader>c :bd<CR>
 noremap <leader>l :bn<CR>

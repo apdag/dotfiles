@@ -23,6 +23,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'chrisbra/csv.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-git'
 " Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-notes'
 " git repos on your local machine (i.e. when working on your own plugin)
