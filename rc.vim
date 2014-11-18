@@ -81,8 +81,11 @@ set number
 set backspace=indent,eol,start
 set encoding=utf-8
 set laststatus=2
+set listchars=tab:▸\ ,eol:¬
+
 
 " close current buffer - fails with changed
+noremap <leader> :set list!<CR>
 noremap <leader>c :bd<CR>
 noremap <leader>l :bn<CR>
 noremap <leader>h :bp<CR>
