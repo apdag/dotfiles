@@ -1,0 +1,65 @@
+######################################################################
+# Global Mutt options. Stuff that's sensible for every account
+# I use. 
+######################################################################
+
+set mask="!^\\.[^.]"
+set edit_headers=yes
+set sort="threads"
+set editor="vim"
+set sendmail="/opt/local/bin/msmtp"
+set quit=ask-yes
+set mime_forward=ask-no
+set delete=yes
+set index_format="%4C %Z %2M %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+
+auto_view text/html                                      
+alternative_order text/plain text/enriched text/html     
+
+# Show $mailboxes when changing folders or moving mails. 
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro index C "<copy-message>?<toggle-mailboxes>" "copy to mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move to mailbox"
+
+# Move messages to $folder/Arvhive
+macro index A "<save-message>=Archive<enter>" "move to archive"
+macro index a "<copy-message>=Archive<enter>" "copy to archive"
+macro index ,a "<tag-prefix><copy-message>=Archive<enter>"  "copy tagged to archive"
+macro index ,A "<tag-prefix><save-message>=Archive<enter>"  "move tagged to archive"
+
+macro compose A "<attach-message>?<toggle-mailboxes>" "attach message to this message"
+
+# Helper stuff.
+macro generic ,f "<shell-escape>mairix " "search using mairix"
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+# Signal offlineimap to poll.
+# This is prettier with `pidof -x offlineimap`
+# But I run mutt lots of places
+macro generic ,r "<shell-escape>kill -USR1 $(ps auxwww | grep offlineimap| grep -v grep | awk '{ print $2 }')<enter>" "request refresh from offlineimap"
+
+# Colors for use with xterm and the like, white background.
+
+color hdrdefault blue white
+color quoted blue white
+color signature red white
+color attachment red white
+color message brightred white
+color error brightred white
+color indicator brightyellow red
+color status brightgreen blue
+color tree black white
+color normal black white
+color markers red white
+color search white black
+color tilde brightmagenta white
+color index blue white ~F
+color index red white "~N|~O"
+color index brightcyan white "~v~(!~N)" # collapsed thread with no unread
+color index green white "~v~(~N|~O)" # collapsed thread with some unread
+color index red white "~N~v~(~N|~O)" # collapsed thread with unread parent
+
+
+# color body brightblack white '\*+[^*]+\*+'
+# color body brightblack white '_+[^_]+_+'

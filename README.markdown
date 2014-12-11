@@ -1,6 +1,11 @@
 # Dotfiles
 
-RC file for Vim and Bash. 
+RC files.
 
-Bash stuff isn't really updated. I run ZSH now, like a gentleman. 
+Vim stuff is good. 
+Mutt stuff is active.
+
+Haven't looked at bash in ages. 
+
+
 
